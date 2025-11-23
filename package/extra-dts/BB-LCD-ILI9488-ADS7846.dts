@@ -13,8 +13,8 @@
     fragment@0 {
         target = <&ocp>;
         __overlay__ {
-            P8_8_pinmux  { status = "disabled"; };  /* D/C - gpio2[3] */
-            P8_9_pinmux  { status = "disabled"; };  /* RESET - gpio2[5] */
+            P8_08_pinmux  { status = "disabled"; };  /* D/C - gpio2[3] */
+            P8_09_pinmux  { status = "disabled"; };  /* RESET - gpio2[5] */
             P8_10_pinmux { status = "disabled"; };  /* CS - gpio2[4] */
             P9_18_pinmux { status = "disabled"; };  /* SPI0_D1 MOSI */
             P9_21_pinmux { status = "disabled"; };  /* SPI0_D0 MISO */
