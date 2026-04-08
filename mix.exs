@@ -132,10 +132,18 @@ defmodule PpCustomBbb.MixProject do
   end
 
   defp set_target() do
+    target =
+      System.get_env("MIX_TARGET", "target")
+      |> String.trim()
+      |> case do
+        "" -> :target
+        name -> String.to_atom(name)
+      end
+
     if function_exported?(Mix, :target, 1) do
-      apply(Mix, :target, [:target])
+      apply(Mix, :target, [target])
     else
-      System.put_env("MIX_TARGET", "target")
+      System.put_env("MIX_TARGET", Atom.to_string(target))
     end
   end
 end
